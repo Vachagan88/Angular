@@ -10,4 +10,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'To-Do-List';
+
+  list:any[]=[];
+
+  addTask(item: string): void{
+    this.list.push({id : this.list.length, name : item});
+    console.warn(this.list);
+  }
+
+  removeTask(id: number): void{
+    console.warn(id);
+    this.list= this.list.filter(item=>item.id !== id);
+  }
 }
+
