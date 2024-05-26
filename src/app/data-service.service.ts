@@ -14,13 +14,23 @@ export class DataServiceService {
 
   addTask(item: string): void{
     this.data.push({id : this.data.length, name : item});
+    console.log(this.data);
   }
 
   removeTask(id: number): void {
-    this.data = this.data.filter(item=>item.id !== id);
+    let currentData = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if(i < id){
+        currentData.push({id : i, name : this.data[i].name});
+      }
+      if(i > id){
+        currentData.push({id : i - 1, name : this.data[i].name});
+      }
+    }
+    this.data = currentData;
   }
 
   updateTask(id: number, item: any): void{
-    this.data[item.id] = item;
+    this.data[id].name = item;
   }
 }

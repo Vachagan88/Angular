@@ -28,8 +28,8 @@ export class AppComponent {
     this.dataService.removeTask(id);
   }
 
-  updateTask(id: number): void{
-    this.dataService.updateTask(id, this.updateTaskText);
+  updateTask(id: number, item: string): void{
+    this.dataService.updateTask(id, item);
   }
 }
 
