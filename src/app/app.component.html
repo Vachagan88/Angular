@@ -1,12 +1,12 @@
 <h1>{{ title }}</h1>
-<input type = "text" placeholder="Enter new Task" #task>
+<input type = "text" [(ngModel)]="task" placeholder="Enter new Task">
 <br>
 <br>
-<button (click)="addTask(task.value)">Add New Task</button>
+<button (click)="addTask(task)">Add New Task</button>
 <br>
 <br>
-<ul *ngFor="let item of list">
+<ul *ngFor="let item of dataService.getData()">
   <li>
-    {{item.name}} <button (click)="removeTask(item.id)">Remove</button>)
+    {{item.name}} <button (click)="removeTask(item.id)">Remove</button>
   </li>
 </ul>
