@@ -11,6 +11,6 @@
 <ul *ngFor="let item of dataService.getData()">
   <li>
     {{item.name}} <button (click)="removeTask(item.id)">Remove</button>
-    <button (click)="updateTask(item.id)">Update</button>
+    <button (click)="updateTask(item.id, updateTaskText)">Update</button>
   </li>
 </ul>

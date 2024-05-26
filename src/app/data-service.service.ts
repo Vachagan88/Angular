@@ -21,6 +21,6 @@ export class DataServiceService {
   }
 
   updateTask(id: number, item: any): void{
-    this.data[item.id] = item;
+    this.data[id] = item;
   }
 }
