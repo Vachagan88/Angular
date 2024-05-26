@@ -15,6 +15,7 @@ import {DataServiceService} from "./data-service.service";
 export class AppComponent {
   title = 'To-Do-List';
   task:any ='';
+  updateTaskText:any ='';
 
   constructor(protected dataService: DataServiceService) {
   }
@@ -25,6 +26,10 @@ export class AppComponent {
 
   removeTask(id: number): void{
     this.dataService.removeTask(id);
+  }
+
+  updateTask(id: number): void{
+    this.dataService.updateTask(id, this.updateTaskText);
   }
 }
 

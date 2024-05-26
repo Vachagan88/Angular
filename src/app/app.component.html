@@ -2,11 +2,15 @@
 <input type = "text" [(ngModel)]="task" placeholder="Enter new Task">
 <br>
 <br>
+<input type = "text" [(ngModel)]="updateTaskText" placeholder="Update Task">
+<br>
+<br>
 <button (click)="addTask(task)">Add New Task</button>
 <br>
 <br>
 <ul *ngFor="let item of dataService.getData()">
   <li>
     {{item.name}} <button (click)="removeTask(item.id)">Remove</button>
+    <button (click)="updateTask(item.id)">Update</button>
   </li>
 </ul>

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataServiceService {
-  private  data:any[]=[];
+  private data:any[]=[];
 
   constructor() { }
 
@@ -18,5 +18,9 @@ export class DataServiceService {
 
   removeTask(id: number): void {
     this.data = this.data.filter(item=>item.id !== id);
+  }
+
+  updateTask(id: number, item: any): void{
+    this.data[item.id] = item;
   }
 }
