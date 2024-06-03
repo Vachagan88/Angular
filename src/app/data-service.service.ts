@@ -19,18 +19,19 @@ export class DataServiceService {
 
   removeTask(id: number): void {
     let currentData = [];
-    for (let i = 0; i < this.data.length; i++) {
+    for(let i = 0; i < this.data.length; i++){
       if(i < id){
         currentData.push({id : i, name : this.data[i].name});
       }
       if(i > id){
         currentData.push({id : i - 1, name : this.data[i].name});
       }
+
+      this.data = currentData;
     }
-    this.data = currentData;
   }
 
   updateTask(id: number, item: any): void{
-    this.data[id].name = item;
+    this.data[item.id].name = item;
   }
 }
